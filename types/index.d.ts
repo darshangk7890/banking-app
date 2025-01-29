@@ -220,6 +220,7 @@ declare interface RightSidebarProps {
 
 declare interface SiderbarProps {
   user: User;
+  className?: string;
 }
 
 declare interface RecentTransactionsProps {
