@@ -5,15 +5,16 @@ import Image from 'next/image'
 import { sidebarLinks } from '@/constants'
 import { cn } from "@/lib/utils"
 import { usePathname } from 'next/navigation'
+import Footer from './Footer'
 
 const SideBar = ({ user }: SiderbarProps) => {
   const pathname = usePathname();
   return (
     <section className='sidebar'>
       <nav className='flex flex-col gap-4'>
-        <Link href="/" className='mb-12 cursor-pointer items-center gap-2'>
-        <Image src="/icons/logo.svg" alt="Horizon logo" width={34} height={34} className="size-[24px] max-xl:size-14"/>
-        <h1 className="sidebar-logo">HASHIRA</h1>
+        <Link href="/" className="mb-12 flex items-center gap-2 cursor-pointer px-15">
+          <Image src="/icons/logo.svg" alt="Horizon logo" width={34} height={34} className="size-[24px] max-xl:size-14" />
+          <h1 className="sidebar-logo">HASHIRA</h1>
         </Link>
         {sidebarLinks.map((item) => {
           const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`)
@@ -23,7 +24,7 @@ const SideBar = ({ user }: SiderbarProps) => {
               className={cn('sidebar-link', { 'bg-bank-gradient': isActive })}
             >
               <div className="relative size-6">
-                <Image 
+                <Image
                   src={item.imgURL}
                   alt={item.label}
                   fill
@@ -42,7 +43,7 @@ const SideBar = ({ user }: SiderbarProps) => {
         user
       </nav>
 
-      footer
+      <Footer user={user} />
     </section>
   )
 }
