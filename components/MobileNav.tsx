@@ -13,7 +13,7 @@ import { cn } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
 
 
-const MobileNav = () => {
+const MobileNav = ({ user }: SiderbarProps) => {
     const pathname = usePathname();
     return (
         <section className="w-full max-w-[264px]">

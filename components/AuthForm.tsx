@@ -51,6 +51,7 @@ const AuthForm = ({ type }: { type: string }) => {
         });
 
         if (response) {
+          console.log(response)
           router.push("/"); // ✅ Fixed: Calling router.push() correctly
         }
       }

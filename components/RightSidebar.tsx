@@ -5,6 +5,7 @@ import BankCards from './BankCards'
 
 const RightSidebar = ({ user, transactions, banks }: RightSidebarProps
 ) => {
+    console.log(user)
     return (
         <aside className="right-sidebar">
             <section className="flex flex-col pb-8">
@@ -15,10 +16,10 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps
                     </div>
                     <div className="profile-details">
                         <h1 className='profile-name'>
-                            {user.name}
+                            {user?.name}
                         </h1>
-                        <p className='profile-email'>
-                            {user.email}
+                        <p className="profile-email">
+                            {user?.email}
                         </p>
                     </div>
                 </div>
@@ -44,7 +45,7 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps
                             <BankCards
                                 key={banks[0].$id}
                                 account={banks[0]}
-                                userName={`${user.firstName} ${user.lastName}`}
+                                userName={user.name}
                                 showBalance={false}
                             />
                         </div>
@@ -53,7 +54,7 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps
                                 <BankCards
                                     key={banks[0].$id}
                                     account={banks[1]}
-                                    userName={`${user.firstName} ${user.lastName}`}
+                                    userName={`${user?.firstName} ${user?.lastName}`}
                                     showBalance={false}
                                 />
                             </div>

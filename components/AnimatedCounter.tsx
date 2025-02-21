@@ -8,8 +8,7 @@ const AnimatedCounter = ({ amount }: { amount: number }) => {
       <CountUp 
         decimals={2}
         decimal="."
-        useIndianSeparators
-        prefix="₹"
+        prefix="$"
         end={amount}
         delay={0.25}
       />
